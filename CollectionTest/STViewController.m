@@ -10,6 +10,7 @@
 
 @interface STViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (nonatomic) UIScrollView *verticalScrollView;
 @property (nonatomic) UICollectionView *collectionView;
 @property (nonatomic) UICollectionViewFlowLayout *layout;
 @property (nonatomic) NSArray *data;
@@ -23,7 +24,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.collectionView];
+    
+    [self.view addSubview:self.verticalScrollView];
+    [self.verticalScrollView addSubview:self.collectionView];
 }
 
 - (UICollectionViewFlowLayout *)layout {
@@ -42,10 +45,24 @@ static NSString * const reuseIdentifier = @"Cell";
     return _layout;
 }
 
+- (UIScrollView *)verticalScrollView {
+    if (!_verticalScrollView) {
+        _verticalScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+        _verticalScrollView.contentSize = CGSizeMake(self.view.frame.size.width, [self collectionViewHeight]);
+    }
+    return _verticalScrollView;
+}
+
+- (CGFloat)collectionViewHeight {
+    CGFloat maxHeightForResults = 2048.0;
+    return maxHeightForResults;
+}
+
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
-        _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:self.layout];
-        _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+
+        CGRect frame = CGRectMake(0.0, 0.0, self.view.frame.size.width, [self collectionViewHeight]);
+        _collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:self.layout];
         [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
