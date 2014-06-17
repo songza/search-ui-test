@@ -19,6 +19,9 @@
 		B13462AC195085BE006299B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1346294195085BE006299B7 /* UIKit.framework */; };
 		B13462B4195085BE006299B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B13462B2195085BE006299B7 /* InfoPlist.strings */; };
 		B13462B6195085BE006299B7 /* CollectionTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B13462B5195085BE006299B7 /* CollectionTestTests.m */; };
+		B13462C11950868F006299B7 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13462C01950868F006299B7 /* STViewController.m */; };
+		B13462C4195086AC006299B7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13462C2195086AC006299B7 /* Main_iPad.storyboard */; };
+		B13462C5195086AC006299B7 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13462C3195086AC006299B7 /* Main_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,10 @@
 		B13462B1195085BE006299B7 /* CollectionTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollectionTestTests-Info.plist"; sourceTree = "<group>"; };
 		B13462B3195085BE006299B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B13462B5195085BE006299B7 /* CollectionTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionTestTests.m; sourceTree = "<group>"; };
+		B13462BF1950868F006299B7 /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
+		B13462C01950868F006299B7 /* STViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
+		B13462C2195086AC006299B7 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		B13462C3195086AC006299B7 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +114,10 @@
 		B1346296195085BE006299B7 /* CollectionTest */ = {
 			isa = PBXGroup;
 			children = (
+				B13462C2195086AC006299B7 /* Main_iPad.storyboard */,
+				B13462C3195086AC006299B7 /* Main_iPhone.storyboard */,
+				B13462BF1950868F006299B7 /* STViewController.h */,
+				B13462C01950868F006299B7 /* STViewController.m */,
 				B134629F195085BE006299B7 /* STAppDelegate.h */,
 				B13462A0195085BE006299B7 /* STAppDelegate.m */,
 				B13462A2195085BE006299B7 /* Images.xcassets */,
@@ -220,6 +231,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B13462C5195086AC006299B7 /* Main_iPhone.storyboard in Resources */,
+				B13462C4195086AC006299B7 /* Main_iPad.storyboard in Resources */,
 				B134629B195085BE006299B7 /* InfoPlist.strings in Resources */,
 				B13462A3195085BE006299B7 /* Images.xcassets in Resources */,
 			);
@@ -240,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B13462C11950868F006299B7 /* STViewController.m in Sources */,
 				B134629D195085BE006299B7 /* main.m in Sources */,
 				B13462A1195085BE006299B7 /* STAppDelegate.m in Sources */,
 			);
